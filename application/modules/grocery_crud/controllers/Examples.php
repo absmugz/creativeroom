@@ -49,6 +49,23 @@ class Examples extends MX_Controller {
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
 		}
 	}
+        
+        public function portfolio_management()
+	{
+			$crud = new grocery_CRUD();
+
+			
+			$crud->set_table('Portfolio_items');
+                        //$crud->set_relation_n_n('Categories', 'Portfolio_categories', 'Categories', 'portfolio_id', 'categories_id', 'category_name');
+                        //$crud->set_relation_n_n('Categories', 'Portfolio_categories', 'Categories', 'categories_id', 'portfolio_id', 'category_name');
+                        $crud->set_relation_n_n('Categories', 'Portfolio_categories', 'Categories', 'portfolio_id', 'categories_id', 'category_name');
+                        
+		
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+	}
 
 	public function employees_management()
 	{
