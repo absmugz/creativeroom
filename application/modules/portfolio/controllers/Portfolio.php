@@ -21,6 +21,17 @@ $this->load->model('portfolio_model');
                 
 	}
         
+        	public function test($id)
+	{
+		echo 'This is HMVC at work';
+                //$portfolios = $this->actor_model->get_all();
+                $portfolios = $this->portfolio_model->get_one($id);
+                var_dump($portfolios);die();
+                
+                
+                
+	}
+        
       
 function portfolios_get()
     {
