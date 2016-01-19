@@ -2,16 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require(APPPATH.'modules\portfolio\libraries\REST_Controller.php');
 
-class Portfolio extends Rest_Controller {
+class Portfolio extends MX_Controller {
     
 public function __construct() {
         parent::__construct();
 $this->load->model('actor_model');
+$this->load->model('portfolio_model');
 
     }
 	public function index()
 	{
 		echo 'This is HMVC at work';
+                //$portfolios = $this->actor_model->get_all();
+                $portfolios = $this->portfolio_model->get_all();
+                var_dump($portfolios);die();
+                
                 
                 
 	}

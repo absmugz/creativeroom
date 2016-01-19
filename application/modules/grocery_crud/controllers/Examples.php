@@ -55,10 +55,10 @@ class Examples extends MX_Controller {
 			$crud = new grocery_CRUD();
 
 			
-			$crud->set_table('Portfolio_items');
+			$crud->set_table('portfolio_items');
                         //$crud->set_relation_n_n('Categories', 'Portfolio_categories', 'Categories', 'portfolio_id', 'categories_id', 'category_name');
                         //$crud->set_relation_n_n('Categories', 'Portfolio_categories', 'Categories', 'categories_id', 'portfolio_id', 'category_name');
-                        $crud->set_relation_n_n('Categories', 'Portfolio_categories', 'Categories', 'portfolio_id', 'categories_id', 'category_name');
+                        $crud->set_relation_n_n('categories', 'portfolio_categories', 'categories', 'portfolio_id', 'categories_id', 'category_name');
                         
 		
 
