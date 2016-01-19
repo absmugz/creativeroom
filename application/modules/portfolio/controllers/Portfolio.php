@@ -13,8 +13,7 @@ $this->load->model('actor_model');
 	{
 		echo 'This is HMVC at work';
                 
-                $result = $this->customers_model->get_all();
-                var_dump($result);die();
+                
 	}
         
       

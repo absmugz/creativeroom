@@ -15,6 +15,15 @@
 
 class Actor_model extends MY_Model
 {
-public $_table = 'actor';
-public $primary_key = 'actor_id';
+public $_table = 'Portfolio_items';
+public $primary_key = 'portfolio_id';
+
+public function Example()
+{
+$this->db->select('*');
+$this->db->from($_table);
+$this->db->join('Portfolio_categories', 'Portfolio_categories.portfolio_id = Portfolio_categories.categories_id');
+$query = $this->db->get();
+}
+
 }
