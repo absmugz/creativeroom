@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-require(APPPATH.'modules\portfolio\libraries\REST_Controller.php');
+//require(APPPATH.'modules\portfolio\libraries\REST_Controller.php');
 
 class Portfolio extends MX_Controller {
     

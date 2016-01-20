@@ -10,8 +10,57 @@ class Examples extends MX_Controller {
 		$this->load->helper('url');
 
 		$this->load->library('grocery_CRUD');
+                $this->load->library('Grocery_CRUD_Multiuploader');
+                
                 
 	}
+        
+        function example_callback_after_upload($uploader_response,$field_info, $files_to_upload)
+{
+    $this->load->library('image_moo');
+ 
+    //Is only one file uploaded so it ok to use it with $uploader_response[0].
+    $file_uploaded = $field_info->upload_path.'/'.$uploader_response[0]->name; 
+ 
+    $this->image_moo->load($file_uploaded)->resize(800,600)->save($file_uploaded,true);
+ 
+    return true;
+}
+        
+        public function multi_upload()
+{
+   $crud = new Grocery_CRUD_Multiuploader(); 
+   $crud->set_table('images');
+  
+   $config = array(
+        /* Destination directory */
+        "path_to_directory" =>'assets/grocery_crud_multiuploader/GC_uploads/pictures/',
+
+       /* Allowed upload type */
+      "allowed_types" =>'gif|jpeg|jpg|png',
+
+      /* Show allowed file types while editing ? */
+      "show_allowed_types" => true,
+
+     /* No file text */
+     "no_file_text" =>'No Pictures',
+
+     /* enable full path or not for anchor during list state */
+     "enable_full_path" => false,
+
+     /* Download button will appear during read state */
+     "enable_download_button" => true,
+
+     /* One can restrict this button for specific types...*/
+    "download_allowed" => 'jpg'
+  );
+
+  $crud->new_multi_upload("images_url",$config);
+ 
+  $output = $crud->render();
+  $this->_example_output($output);
+}
+
 
 	public function _example_output($output = null)
 	{
@@ -53,19 +102,58 @@ class Examples extends MX_Controller {
         public function portfolio_management()
 	{
 			$crud = new grocery_CRUD();
+                        $crud = new Grocery_CRUD_Multiuploader(); 
+                        //$crud->new_multi_upload('images');
+                        $this->config->set_item('grocery_crud_file_upload_allow_file_types','gif|jpeg|jpg|png');
+                        
 
 			
 			$crud->set_table('portfolio_items');
                         //$crud->set_relation_n_n('Categories', 'Portfolio_categories', 'Categories', 'portfolio_id', 'categories_id', 'category_name');
                         //$crud->set_relation_n_n('Categories', 'Portfolio_categories', 'Categories', 'categories_id', 'portfolio_id', 'category_name');
                         $crud->set_relation_n_n('categories', 'portfolio_categories', 'categories', 'portfolio_id', 'categories_id', 'category_name');
+                        //$crud->set_relation('images_id', 'images', 'images_url');
+                        //$crud->set_relation('images_id','images','images_url');
                         
-		
+                        //$crud->set_relation_n_n('images', 'portfolio_images', 'images', 'portfolio_id', 'images_id', 'images_url');
+                        
+                        $config = array(
+        /* Destination directory */
+        "path_to_directory" =>'assets/grocery_crud_multiuploader/GC_uploads/pictures/',
 
+       /* Allowed upload type */
+      "allowed_types" =>'gif|jpeg|jpg|png',
+
+      /* Show allowed file types while editing ? */
+      "show_allowed_types" => true,
+
+     /* No file text */
+     "no_file_text" =>'No Pictures',
+
+     /* enable full path or not for anchor during list state */
+     "enable_full_path" => false,
+
+     /* Download button will appear during read state */
+     "enable_download_button" => true,
+
+     /* One can restrict this button for specific types...*/
+    "download_allowed" => 'jpg'
+  );
+		
+                        
+                        //$crud->new_multi_upload("images_url",$config);
+                        //$crud->new_multi_upload("images",$config);
+                        //$crud->set_field_upload('images_url','assets/uploads/files');
+                          $crud->set_field_upload('images_url','assets/uploads/images');
+ 
+    $crud->callback_after_upload(array($this,'example_callback_after_upload'));
+                        
 			$output = $crud->render();
 
 			$this->_example_output($output);
 	}
+        
+        
 
 	public function employees_management()
 	{
