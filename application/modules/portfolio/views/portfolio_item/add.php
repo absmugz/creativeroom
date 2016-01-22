@@ -7,10 +7,17 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bootstrap 101 Template</title>
 
-    <!-- Bootstrap -->
+<!-- Bootstrap css -->
 
 <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>">
+
+<!-- Bootstrap multiselect css -->
+
 <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-multiselect.css"); ?>">
+
+<!-- custom css -->
+
+<link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css"); ?>">
 
  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,7 +34,7 @@
 
      
          <div class="form-group">
-		<label for="name" class="col-md-4 control-label">Category</label>
+		<label for="name" class="col-md-4 control-label">Category <span class="required">*</span></label>
 		<div class="col-md-4">
                     <select name="categories[]" multiple="multiple" id="categories">
 <?php
@@ -40,21 +47,34 @@ foreach ($categories_dropdown as $item){
 ?>
  </select>
 		</div>
+                 <div class="col-md-4 error-label">
+			<?php echo form_error('category'); ?>
+		</div>
 	</div>
 
 
 
 
 	<div class="form-group">
-		<label for="name" class="col-md-4 control-label">Name</label>
+		<label for="name" class="col-md-4 control-label">Name <span class="required">*</span></label>
+                
 		<div class="col-md-4">
 			<input type="text" name="name" value="<?php echo $this->input->post('name'); ?>" class="form-control" id="name" />
 		</div>
+                
+                  <div class="col-md-4 error-label">
+			<?php echo form_error('name'); ?>
+		</div>
+               
+                
 	</div>
 	<div class="form-group">
-		<label for="description" class="col-md-4 control-label">Description</label>
+		<label for="description" class="col-md-4 control-label">Description <span class="required">*</span></label>
 		<div class="col-md-4">
 			<input type="text" name="description" value="<?php echo $this->input->post('description'); ?>" class="form-control" id="description" />
+		</div>
+                  <div class="col-md-4 error-label">
+			<?php echo form_error('description'); ?>
 		</div>
 	</div>
 	<div class="form-group">

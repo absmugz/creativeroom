@@ -1,7 +1,9 @@
 <?php
 
-class Portfolio_model extends CI_Model {
-
+class Portfolio_model extends MY_Model {
+    
+     public $_table = 'portfolio_items';
+/**
 function __construct()
     {
         parent::__construct();
@@ -57,5 +59,5 @@ $this->db->join('categories', 'categories.categories_id = portfolio_categories.c
 
 $query = $this->db->get();
 return $query->result_array(); 
-}
+}**/
 }
