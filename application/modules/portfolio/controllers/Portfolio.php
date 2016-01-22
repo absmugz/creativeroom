@@ -9,6 +9,8 @@ public function __construct() {
 $this->load->model('actor_model');
 $this->load->model('portfolio_model');
  $this->load->model('categories_model', 'categories');
+ $this->load->helper('form');
+ $this->load->helper('url');
 
     }
 	public function index()
