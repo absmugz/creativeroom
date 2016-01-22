@@ -8,63 +8,29 @@ public function __construct() {
         parent::__construct();
 $this->load->model('actor_model');
 $this->load->model('portfolio_model');
+ $this->load->model('categories_model', 'categories');
+ $this->load->helper('form');
 
     }
 	public function index()
 	{
             
             
-		echo 'This is HMVC at work';
-                //$portfolios = $this->actor_model->get_all();
-               // $portfolios = $this->portfolio_model->get_all();
-               // var_dump($portfolios);die();
-                
-                    $data = array(
-               'name' => 'My title 2' ,
-               'description' => 'My Name 2 ' ,
-               'link' => 'My date 2'
-            );
+		//echo 'This is HMVC at work';
 
-$this->db->insert('portfolio_items', $data); 
-
-$last_id = $this->db->insert_id();
-
-
-
-
-if($last_id){
-
-
-$array = array(1,2,3);
-foreach ($array as $key)
-{
-   
-        $data = array(
-        'portfolio_id' => $last_id,
-        'categories_id' => $key,
-        
-    );
-        
-         
-$this->db->insert('portfolio_categories', $data); 
-}
-
-
-    
-
-
-
- var_dump($last_id);die(); 
-}
-                
-                //$portfolios = $this->portfolio_model->get_one($id);
-                //var_dump($portfolios);die();
-//var_dump($last_id);die();
-                
-                
                 
                 
         }
+        
+public function add(){
+    
+        $data['categories_dropdown'] = $this->categories->get_all();
+        $this->load->view('portfolio_item/add',$data);
+  
+                
+                
+   
+} 
         
   public function test($id)
 	{
