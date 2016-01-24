@@ -14,6 +14,8 @@ class Portfolio extends MX_Controller {
         $this->load->model('categories_model', 'categories');
         $this->load->helper('form');
         $this->load->helper('url');
+        $this->load->helper('file');
+        
         $this->load->library('form_validation');
     }
 

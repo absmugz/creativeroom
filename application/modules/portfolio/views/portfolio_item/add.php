@@ -15,6 +15,10 @@
 
 <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap-multiselect.css"); ?>">
 
+<!-- dropzone css -->
+
+<link rel="stylesheet" href="<?php echo base_url("assets/dropzone/js/dropzone.css"); ?>">
+
 <!-- custom css -->
 
 <link rel="stylesheet" href="<?php echo base_url("assets/css/custom.css"); ?>">
@@ -27,6 +31,72 @@
     <![endif]-->
   </head>
  <div class="container">
+     
+     <div class="container" id="container">
+		
+		<div id="actions" class="row">
+			<div class="col-lg-7">
+				<!-- The fileinput-button span is used to style the file input field as button -->
+				<span class="btn btn-success fileinput-button">
+					<i class="glyphicon glyphicon-plus"></i>
+					<span>Add files...</span>
+				</span>
+				<button type="submit" class="btn btn-primary start">
+					<i class="glyphicon glyphicon-upload"></i>
+					<span>Start upload</span>
+				</button>
+				<button type="reset" class="btn btn-warning cancel">
+					<i class="glyphicon glyphicon-ban-circle"></i>
+					<span>Cancel upload</span>
+				</button>
+			</div>
+
+			<div class="col-lg-5">
+				<!-- The global file processing state -->
+				<span class="fileupload-process">
+					<div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+						<div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+					</div>
+				</span>
+			</div>
+		</div>
+
+		<div class="table table-striped" class="files" id="previews">
+			<div id="template" class="file-row">
+				<!-- This is used as the file preview template -->
+				<div>
+					<span class="preview"><img data-dz-thumbnail /></span>
+				</div>
+				<div>
+					<p class="name" data-dz-name></p>
+					<strong class="error text-danger" data-dz-errormessage></strong>
+				</div>
+				<div>
+					<p class="size" data-dz-size></p>
+					<div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+						<div class="progress-bar progress-bar-success" style="width:0%;" data-dz-uploadprogress></div>
+					</div>
+				</div>
+				<div>
+					<button class="btn btn-primary start">
+						<i class="glyphicon glyphicon-upload"></i>
+						<span>Start</span>
+					</button>
+					<button data-dz-remove class="btn btn-warning cancel">
+						<i class="glyphicon glyphicon-ban-circle"></i>
+						<span>Cancel</span>
+					</button>
+					<p data-dz-remove class="delete">
+						<i class="glyphicon glyphicon-check"></i>
+						<span>Finish</span>
+					</p>
+				</div>
+			</div>
+		</div>
+		<hr>
+		
+	</div>
+
 <?php //echo validation_errors(); ?>
 
  
@@ -97,9 +167,12 @@ foreach ($categories_dropdown as $item){
 <script type="text/javascript" src="<?php echo base_url("assets/js/jquery.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap-multiselect.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("assets/dropzone/dropzone.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("assets/dropzone/js/build.js"); ?>"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
         $('#categories').multiselect();
     });
 </script>
+
