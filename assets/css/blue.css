@@ -7035,11 +7035,15 @@ body {
   padding-top: 30px;
 }
 .leaderboard.leaderboard-style-one h1 {
-  font-size: 56px;
+  font-size:5.000em;
+  
   line-height: 64px;
   color: #3c5b68;
   margin-bottom: 5px;
-  font-family: "Yanone Kaffeesatz", Monaco, Menlo, Consolas, "Courier New", monospace;
+  
+  /*font-family: "Yanone Kaffeesatz", Monaco, Menlo, Consolas, "Courier New", monospace;*/
+  
+   font-family: 'HaloHandletter',sans-serif;
   font-weight: 400;
 }
 .leaderboard.leaderboard-style-one h2 {
