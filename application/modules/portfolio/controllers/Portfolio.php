@@ -22,10 +22,20 @@ class Portfolio extends MX_Controller {
     public function index() {
 
 
-        echo 'This is HMVC at work';
+        //echo 'This is HMVC at work';
 
         $categories_dropdown = $this->categories->get_all();
-        //$portfolios = $this->actor_model->get_all();
+        $this->load->view('portfolio_item/index');
+  
+
+        //$portfolios = $this->portfolio_model->get_one($id);
+        //var_dump($portfolios);die();
+//var_dump($last_id);die();
+    }
+
+    public function add() {
+        
+              //$portfolios = $this->actor_model->get_all();
         // $portfolios = $this->portfolio_model->get_all();
         // var_dump($portfolios);die();
 
@@ -62,13 +72,6 @@ class Portfolio extends MX_Controller {
             var_dump($last_id);
             die();
         }
-
-        //$portfolios = $this->portfolio_model->get_one($id);
-        //var_dump($portfolios);die();
-//var_dump($last_id);die();
-    }
-
-    public function add() {
 
         $data['categories_dropdown'] = $this->categories->get_all();
 
