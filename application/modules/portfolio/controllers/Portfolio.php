@@ -24,8 +24,10 @@ class Portfolio extends MX_Controller {
 
         //echo 'This is HMVC at work';
 
-        $categories_dropdown = $this->categories->get_all();
-        $this->load->view('portfolio_item/index');
+        $data['categories_dropdown'] = $this->categories->get_all();
+         
+        //var_dump($data);
+        $this->load->view('portfolio_item/index',$data);
   
 
         //$portfolios = $this->portfolio_model->get_one($id);

@@ -41,21 +41,12 @@
     <li>
       <a data-filter='*' href='#'>show all</a>
     </li>
-    <li>
-      <a data-filter='.filter-design' href='#'>design</a>
-    </li>
-    <li>
-      <a data-filter='.filter-development' href='#'>development</a>
-    </li>
-    <li>
-      <a data-filter='.filter-logo' href='#'>logo</a>
-    </li>
-    <li>
-      <a data-filter='.filter-photoshop' href='#'>photoshop</a>
-    </li>
-    <li>
-      <a data-filter='.filter-html' href='#'>html</a>
-    </li>
+   
+     <?php foreach($categories_dropdown as $value):?>
+     
+    <li><a data-filter=<?php echo ".filter-".$value->category_name; ?> href='#'><?php echo $value->category_name ?></a></li>
+    
+     <?php endforeach; ?>
   </ul>
   <div class='isotope-w'>
     <div class='item filter-html filter-logo'>
