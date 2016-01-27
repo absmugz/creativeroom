@@ -141,16 +141,16 @@
       </a>
       <ul class='nav navbar-nav navbar-right'>
         <li class='current active'>
-          <a class='current' href='index.html'>Home</a>
+            <a class='current' href='#home'>Home</a>
         </li>
         <li>
-          <a href='about.html'>About Us</a>
+          <a href='#about'>About Us</a>
         </li>
         <li>
-          <a href='portfolio.html'>Portfolio</a>
+          <a class="page-scroll" href="#portfolio">Portfolio</a>
         </li>
         <li>
-          <a href='loop.html'>Blog</a>
+          <a href='#social'>Social</a>
         </li>
         <li>
           <a data-toggle='modal' href='#contactModal'>Contact Us</a>
@@ -164,7 +164,7 @@
   <div class='separator-shadow-bottom'>
     <img alt='' src='assets/images/shadow-separator-wide-bottom.png'>
   </div>
-  <section class='leaderboard leaderboard-style-one'>
+  <section class='leaderboard leaderboard-style-one'  id='home'>
     <div class='container'>
       <h1 class='animated fadeInDown fontpro'>Welcome to creative room</h1>
       <h2 class='animated fadeInDown'>We are a hybrid creative place. With expertise in design, web design and development, 3D and VFX.</h2>
@@ -272,7 +272,8 @@
       <img alt='' src='assets/images/shadow-separator-wide-top.png'>
     </div>
     
-      <h2 id="anchorClients" class="has-sub-header text-center">Our Portfolio</h2>
+      
+      <h2 id="portfolio" class="has-sub-header text-center">Our Portfolio</h2>
       
       <ul class='portfolio-filters text-center'>
     <li>
@@ -759,7 +760,7 @@
   </div>
  
  
-  <div class='container'>
+    <div class='container' id="about">
     <h2 class='header-lined has-sub-header text-center' id='anchorTeam'>Meet the "Dream Team"</h2>
     <h4 class='sub-lined-header text-center'>We are a small team of designers and developers who help brands with big ideas.</h4>
     <div class='row bottom-margin'>
@@ -937,8 +938,14 @@
 <script type="text/javascript" src="<?php echo base_url("assets/js/jquery.scrollUp.min.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/js/jquery.swipebox.min.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/js/jquery.smoothScroll.js"); ?>"></script>
+<!-- Include jQuery ScrollTo -->
 
 <script type="text/javascript" src="<?php echo base_url("assets/js/application.js"); ?>"></script>
+
+ <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+<script type="text/javascript" src="<?php echo base_url("assets/js/custom.js"); ?>"></script>
 
 </body>
 </html>
