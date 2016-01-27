@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Creative room | design | web design  | Web development  | 3D modelling, animation and VFX</title>
 
 <!-- Bootstrap css -->
 
@@ -167,13 +167,13 @@
   <section class='leaderboard leaderboard-style-one'>
     <div class='container'>
       <h1 class='animated fadeInDown fontpro'>Welcome to creative room</h1>
-      <h2 class='animated fadeInDown'>Earth is a beautiful responsive template with a focus on readability</h2>
+      <h2 class='animated fadeInDown'>We are a hybrid creative place. With expertise in design, web design and development, 3D and VFX.</h2>
       <div class='relative-w'>
         <div class='loupe loupe-left animated rollIn'>
-          <img alt='' src='assets/images/showcase.png'>
+            <img id='smaller' alt='' src='assets/images/showcase.png'>
         </div>
         <div class='loupe loupe-right animated flipInY'>
-          <img alt='' src='assets/images/showcase.png'>
+            <img id='bigger' alt='' src='assets/images/showcase.png'>
         </div>
         <div class='frame-browser animated bounceInUp'>
           <div class='frame-buttons'>
@@ -696,22 +696,22 @@
     <div class='clients'>
       <div class='row bottom-margin'>
         <div class='col-md-2'>
-          <img alt='' class='animated-when-visible' data-animation-type='rotateInUpLeft' src='http://cdn.pins.ms/earth_html/client-6.png'>
+          <img alt='' class='animated-when-visible' data-animation-type='rotateInUpLeft' src='assets/images/clients/client-1.png'>
         </div>
         <div class='col-md-2'>
-          <img alt='' class='animated-when-visible delay-animation-one' data-animation-type='rotateInUpLeft' src='http://cdn.pins.ms/earth_html/client-3.png'>
+          <img alt='' class='animated-when-visible delay-animation-one' data-animation-type='rotateInUpLeft' src='assets/images/clients/client-2.png'>
         </div>
         <div class='col-md-2'>
-          <img alt='' class='animated-when-visible delay-animation-two' data-animation-type='rotateInUpLeft' src='http://cdn.pins.ms/earth_html/client-4.png'>
+          <img alt='' class='animated-when-visible delay-animation-two' data-animation-type='rotateInUpLeft' src='assets/images/clients/client-3.png'>
         </div>
         <div class='col-md-2'>
-          <img alt='' class='animated-when-visible delay-animation-two' data-animation-type='rotateInUpRight' src='http://cdn.pins.ms/earth_html/client-5.png'>
+          <img alt='' class='animated-when-visible delay-animation-two' data-animation-type='rotateInUpRight' src='assets/images/clients/client-4.png'>
         </div>
         <div class='col-md-2'>
-          <img alt='' class='animated-when-visible delay-animation-one' data-animation-type='rotateInUpRight' src='http://cdn.pins.ms/earth_html/client-3.png'>
+          <img alt='' class='animated-when-visible delay-animation-one' data-animation-type='rotateInUpRight' src='assets/images/clients/client-5.png'>
         </div>
         <div class='col-md-2'>
-          <img alt='' class='animated-when-visible' data-animation-type='rotateInUpRight' src='http://cdn.pins.ms/earth_html/client-6.png'>
+          <img alt='' class='animated-when-visible' data-animation-type='rotateInUpRight' src='assets/images/clients/client-6.png'>
         </div>
       </div>
     </div>

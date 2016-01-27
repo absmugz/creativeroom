@@ -8,7 +8,7 @@ class Portfolio extends MX_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('actor_model');
+       
        
         $this->load->model('portfolio_model', 'portfolio');
         $this->load->model('categories_model', 'categories');
