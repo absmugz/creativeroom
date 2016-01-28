@@ -141,16 +141,16 @@
       </a>
       <ul class='nav navbar-nav navbar-right'>
         <li class='current active'>
-            <a class='current' href='#home'>Home</a>
+            <a class='current page-scroll' href='#home'>Home</a>
         </li>
         <li>
-          <a href='#about'>About Us</a>
+          <a class='page-scroll'href='#about'>About Us</a>
         </li>
         <li>
-          <a class="page-scroll" href="#portfolio">Portfolio</a>
+          <a class='page-scroll' href="#portfolio">Portfolio</a>
         </li>
         <li>
-          <a href='#social'>Social</a>
+          <a class='page-scroll' href='#social'>Social</a>
         </li>
         <li>
           <a data-toggle='modal' href='#contactModal'>Contact Us</a>
@@ -921,6 +921,7 @@
   </footer>
 
 <script type="text/javascript" src="<?php echo base_url("assets/js/jquery.js"); ?>"></script>
+
 <script type="text/javascript" src="<?php echo base_url("assets/js/color_switcher.js"); ?>"></script>
 
 <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap/carousel.js"); ?>"></script>
@@ -945,7 +946,7 @@
  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
 
-<script type="text/javascript" src="<?php echo base_url("assets/js/custom.js"); ?>"></script>
+
 
 </body>
 </html>
